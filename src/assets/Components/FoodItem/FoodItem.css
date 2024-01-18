@@ -1,0 +1,8 @@
+.food-item{
+  min-width:200px;
+  width:20%;
+
+  p{
+    text-align: center;
+  }
+}
