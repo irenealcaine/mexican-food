@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import FoodItem from '../FoodItem/FoodItem'
 import axios from 'axios';
 import './FoodList.css'
-import { exampleFoodList } from '../../../Utils/example';
+import { exampleFoodList } from '../../Utils/example';
 
 const FoodList = () => {
 

@@ -1,0 +1,17 @@
+.input-container{
+  position: relative;
+  z-index:15;
+  padding:20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+
+  input, select{
+    padding:5px 15px;
+    border-radius: 10px;
+    border: none;
+  }
+}

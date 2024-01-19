@@ -1,0 +1,86 @@
+.hero{
+  position: relative;
+  height: 500px;
+
+  margin-bottom:-150px;
+
+  .hero-image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    position: absolute;
+    z-index: 0
+  }
+
+  .hero-body{
+    height: 100%;
+    margin: 0 auto;
+
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+
+    background: linear-gradient(transparent -20%,  var(--white) 100%);
+    padding:50px;
+
+    .hero-content{
+      width: 80%;
+      margin: 0px auto;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h1, p{
+        width: fit-content;
+        padding:5px 15px;
+        border-radius: 10px;
+      }
+
+      h1{
+        font-size: 50px;
+        line-height: 1;
+        background: linear-gradient(135deg, var(--transparent-green), var(--transparent-yellow), var(--transparent-red))
+      }
+
+      p{
+        &.Easy{
+          background-color: var(--transparent-green);
+        }
+
+        &.Medium{
+          background-color: var(--transparent-yellow);
+        }
+      }
+
+      button{
+        width: fit-content;
+        padding:5px 15px;
+        border-radius: 10px;
+        background-color: var(--white);
+        /* border: 2px solid var(--red); */
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 15px;
+
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero{
+    .hero-body{
+      padding: 20px;
+      .hero-content{
+        width: 100%;
+        h1{
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}

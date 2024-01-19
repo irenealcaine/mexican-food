@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import './Hero.css'
-import { exampleFoodList } from '../../../Utils/example';
+import { exampleFoodList } from '../../Utils/example';
 
 const Hero = () => {
 
@@ -45,12 +45,14 @@ const Hero = () => {
     <header className='hero'>
 
       <img src={food.image} alt={food.title} className='hero-image' />
-      <div className='hero-content'>
+      <div className='hero-body'>
+        <div className="hero-content">
 
-        <h2>{food.title}</h2>
-        <p>{food.difficulty}</p>
+          <h1>{food.title}</h1>
+          <p className={`${food.difficulty}`}>{food.difficulty} difficulty</p>
+          <button>See more</button>
+        </div>
 
-        <button>See more</button>
       </div>
 
     </header>
