@@ -1,6 +1,24 @@
 .food-item{
-  min-width:200px;
+  min-width:250px;
   width:20%;
+
+  img{
+    border-radius: 20px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+
+    &.Easy{
+      border: 5px solid var(--green);
+    }
+
+    &.Medium{
+      border: 5px solid var(--yellow);
+    }
+
+    &.Hard{
+      border: 5px solid var(--red);
+    }
+  }
 
   p{
     text-align: center;

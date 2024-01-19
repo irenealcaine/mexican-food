@@ -1,3 +1,12 @@
+:root{
+  --green: #6AB547;
+  --red: #C21807;
+  --yellow: #FFD64D;
+  --orange: #FF8C00;
+  --white: #ededed;
+  --black: #121212;
+}
+
 *{
   margin:0;
   padding:0;
@@ -12,6 +21,8 @@ img, svg, video{
 
 body{
   min-height: 100dvh;
+  background-color: var(--white);
+  color: var(--black)
 }
 
 h1, h2, h3, h4{
