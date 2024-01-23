@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { examplePlate } from '../../Utils/example';
+import './Plate.css'
 
 const Plate = () => {
   const [plate, setPlate] = useState([]);
@@ -35,25 +36,31 @@ const Plate = () => {
   }, [])
 
   return (
-    <>
-      <h1>{plate.title}</h1>
-      <p>{plate.description}</p>
-      <p>{plate.difficulty}</p>
-      <p>{plate.portion}</p>
-      <p>{plate.time}</p>
-      <img src={plate.image} alt={plate.title} />
+    <div className='plate'>
+      <div className="plate-info">
+        <img src={plate.image} alt={plate.title} />
+        <div className="plate-text">
+
+          <h1>{plate.title}</h1>
+          <p>{plate.description}</p>
+          <p>{plate.difficulty}</p>
+          <p>{plate.portion}</p>
+          <p>{plate.time}</p>
+        </div>
+      </div>
+      <h2>Ingredients</h2>
       <ul>
         {plate?.ingredients?.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-
+      <h2>Steps</h2>
       <ol>
         {plate?.method?.map((step, index) => (
           <li key={index}>{step[`Step ${index + 1}`]}</li>
         ))}
       </ol>
-    </>
+    </div>
   )
 }
 

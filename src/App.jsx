@@ -6,12 +6,14 @@ import Home from './Pages/Home/Home'
 import FoodList from './Components/FoodList/FoodList'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Plate from './Pages/Plate/Plate'
+import Header from './Components/Header/Header'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

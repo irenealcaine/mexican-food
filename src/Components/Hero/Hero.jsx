@@ -42,7 +42,7 @@ const Hero = () => {
 
 
   return (
-    <header className='hero'>
+    <div className='hero'>
 
       <img src={food.image} alt={food.title} className='hero-image' />
       <div className='hero-body'>
@@ -55,7 +55,7 @@ const Hero = () => {
 
       </div>
 
-    </header>
+    </div>
   )
 }
 
