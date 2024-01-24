@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+
+  margin-top: 30px;
+  font-size: 25px;
+
+  background: var(--transparent-green);
+  border-top: 2px solid var(--yellow);
+  backdrop-filter: blur( 7px );
+
+
+  a {
+    transition: all 0.2s ease;
+    display: flex;
+
+    &:hover {
+      /* color: var(--white); */
+      filter: drop-shadow(0 0 1px var(--orange)) drop-shadow(0 0 2px var(--orange))
+        drop-shadow(0 0 5px var(--orange));
+    }
+  }
+}

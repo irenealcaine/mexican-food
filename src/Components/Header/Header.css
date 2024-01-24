@@ -1,4 +1,8 @@
 header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   background: var(--transparent-green);
   border-bottom: 2px solid var(--yellow);
   backdrop-filter: blur( 7px );
@@ -10,7 +14,11 @@ header{
   height: var( --header-height);
   padding:5px 20px;
 
-  img{
+  a{
     height: 100%;
+
+    img{
+      height: 100%;
+    }
   }
 }

@@ -1,11 +1,19 @@
 import React from 'react'
-import logo from '../../assets/react.svg'
+import logo from '../../assets/fork-knife.svg'
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="" />
+      <Link to={'/'}>
+        <img src={logo} alt="logo" className='logo' />
+      </Link>
+      <nav>
+        <Link to={'/'}>
+          Home
+        </Link>
+      </nav>
     </header>
   )
 }

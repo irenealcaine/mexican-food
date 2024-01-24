@@ -1,9 +1,8 @@
 .plate{
   padding-top: var(--header-height);
   width:70%;
+  max-width: 900px;
   margin:0 auto;
-
-
 
   .plate-info{
     display: flex;
@@ -30,7 +29,7 @@
   }
 
   p, li{
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
   }
 
   ul{
@@ -43,7 +42,7 @@
 
     li{
       padding: 5px;
-      margin-left: 35px;
+      margin-left: 20px;
 
       &::marker {
         color: var(--orange);

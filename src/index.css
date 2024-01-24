@@ -55,7 +55,12 @@ h1, h2, h3, h4{
   font-family: 'header', sans-serif;
 }
 
-p, li{
+p, li, a{
   text-wrap: pretty;
   font-family: 'text', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }

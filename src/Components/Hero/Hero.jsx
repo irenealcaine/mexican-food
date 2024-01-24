@@ -35,7 +35,6 @@ const Hero = () => {
   useEffect(() => {
     const randomFood = Math.floor(Math.random() * exampleFoodList.length)
     setFood(exampleFoodList[randomFood]);
-    console.log(exampleFoodList[randomFood])
   }, [])
 
 
