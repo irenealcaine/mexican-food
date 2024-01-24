@@ -35,7 +35,7 @@
       h1, p{
         width: fit-content;
         padding:5px 15px;
-        border-radius: 10px;
+        border-radius: 5px;
       }
 
       h1{
@@ -47,24 +47,28 @@
 
       p{
         &.Easy{
-          background-color: var(--transparent-green);
+          background-color: var(--white);
+          border: 2px solid var(--green);
+          color: var(--green)
         }
 
         &.Medium{
           background-color: var(--transparent-yellow);
+          border: 5px solid var(--yellow);
         }
       }
 
       button{
         width: fit-content;
         padding:5px 15px;
-        border-radius: 10px;
-        background-color: var(--white);
+        border-radius: 1000px;
+        background-color: var(--transparent-green);
         /* border: 2px solid var(--red); */
         border: none;
         font-size: 20px;
         font-weight: bold;
         margin-top: 15px;
+        margin-left:15px;
 
       }
     }

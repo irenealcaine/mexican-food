@@ -49,7 +49,7 @@ const Hero = () => {
 
           <h1>{food.title}</h1>
           <p className={`${food.difficulty}`}>{food.difficulty} difficulty</p>
-          <button>See more</button>
+          <button>See more ➡️</button>
         </div>
 
       </div>
