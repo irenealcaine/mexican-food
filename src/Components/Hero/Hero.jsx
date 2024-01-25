@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import './Hero.css'
 import { exampleFoodList } from '../../Utils/example';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
 
@@ -49,7 +50,7 @@ const Hero = () => {
 
           <h1>{food.title}</h1>
           <p className={`${food.difficulty}`}>{food.difficulty} difficulty</p>
-          <button>See more ➡️</button>
+          <Link>See more &raquo;</Link>
         </div>
 
       </div>
