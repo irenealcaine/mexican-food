@@ -4,6 +4,8 @@
   max-width: 900px;
   margin:0 auto;
 
+  padding-bottom: 70px;
+
   .plate-info{
     display: flex;
     gap:20px;

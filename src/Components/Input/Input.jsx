@@ -1,14 +1,15 @@
 import React from 'react'
 import './Input.css'
 
-const Input = () => {
+const Input = ({ onSearchChange, onDifficultyChange }) => {
   return (
     <div className='input-container'>
-      <input type="text" name="" id="" placeholder='Search...' />
-      <select name="" id="">
-        <option>Easy</option>
-        <option>Medium</option>
-        <option>Hard</option>
+      <input type="text" name="" id="" placeholder='Search...' onChange={(e) => onSearchChange(e.target.value)} />
+      <select onChange={(e) => onDifficultyChange(e.target.value)}>
+        <option value="">All</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
       </select>
     </div>
   )

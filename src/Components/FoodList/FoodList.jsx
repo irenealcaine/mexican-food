@@ -3,10 +3,13 @@ import FoodItem from '../FoodItem/FoodItem'
 import axios from 'axios';
 import './FoodList.css'
 import { exampleFoodList } from '../../Utils/example';
+import Input from '../Input/Input';
 
 const FoodList = () => {
 
   const [plates, setPlates] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [difficulty, setDifficulty] = useState('');
 
   // Change that when finished
 
@@ -36,15 +39,28 @@ const FoodList = () => {
 
   useEffect(() => {
     setPlates(exampleFoodList)
-    console.log(exampleFoodList)
   }, [])
 
+  const filteredPlates = plates.filter(plate => {
+    return (
+      plate.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (difficulty ? plate.difficulty === difficulty : true)
+    );
+  });
+
   return (
-    <section className='food-list'>
-      {plates.map((plate) => (
-        <FoodItem key={plate.id} plate={plate} />
-      ))}
-    </section>
+    <>
+      <Input
+        onSearchChange={setSearchTerm}
+        onDifficultyChange={setDifficulty}
+      />
+      <section className='food-list'>
+        {filteredPlates.map((plate) => (
+          <FoodItem key={plate.id} plate={plate} />
+        ))}
+      </section>
+    </>
+
   )
 }
 
