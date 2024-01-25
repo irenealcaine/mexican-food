@@ -69,7 +69,24 @@
         font-weight: bold;
         margin-top: 15px;
         margin-left:35px;
+        position: relative;
+        transition: all .3s ease;
 
+        &:hover{
+          padding-right:30px;
+          background-color: var(--transparent-yellow);
+        }
+
+        span{
+          transition: all .3s ease;
+          position: absolute;
+          opacity: 0;
+        }
+
+        &:hover span{
+          transform: translateX(10px);
+          opacity: 1
+        }
       }
     }
 

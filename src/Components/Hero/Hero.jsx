@@ -50,7 +50,7 @@ const Hero = () => {
 
           <h1>{food.title}</h1>
           <p className={`${food.difficulty}`}>{food.difficulty} difficulty</p>
-          <Link>See more &raquo;</Link>
+          <Link to={`/${food.id}`}>See more <span>&raquo;</span></Link>
         </div>
 
       </div>
