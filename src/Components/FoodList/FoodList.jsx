@@ -55,9 +55,12 @@ const FoodList = () => {
         onDifficultyChange={setDifficulty}
       />
       <section className='food-list'>
-        {filteredPlates.map((plate) => (
-          <FoodItem key={plate.id} plate={plate} />
-        ))}
+        {filteredPlates.length !== 0
+          ? filteredPlates.map((plate) => (
+            <FoodItem key={plate.id} plate={plate} />
+          ))
+
+          : <p>There's no plates</p>}
       </section>
     </>
 
