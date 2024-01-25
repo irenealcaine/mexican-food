@@ -6,34 +6,33 @@ import './Plate.css'
 
 const Plate = () => {
   const [plate, setPlate] = useState([]);
+  const { id } = useParams();
 
-  // Change that when finished
-  // const { id } = useParams();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://the-mexican-food-db.p.rapidapi.com/${id}`, {
+
+          headers: {
+            "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
+            "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
+          },
+        });
+
+        setPlate(response.data);
+      } catch (error) {
+        console.error("Error al obtener datos:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  //example response
 
   // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(`https://the-mexican-food-db.p.rapidapi.com/${id}`, {
-
-  //         headers: {
-  //           "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
-  //           "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-  //         },
-  //       });
-
-
-  //       setPlate(response.data);
-  //     } catch (error) {
-  //       console.error("Error al obtener datos:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-  useEffect(() => {
-
-    setPlate(examplePlate)
-  }, [])
+  //   setPlate(examplePlate)
+  // }, [])
 
   return (
     <div className='plate'>

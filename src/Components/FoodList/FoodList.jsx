@@ -11,35 +11,32 @@ const FoodList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [difficulty, setDifficulty] = useState('');
 
-  // Change that when finished
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(import.meta.env.VITE_FOOD_URL, {
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(import.meta.env.VITE_FOOD_URL, {
-
-  //         headers: {
-  //           "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
-  //           "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-  //         },
-  //       });
+          headers: {
+            "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
+            "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
+          },
+        });
 
 
-  //       setPlates(response.data);
-  //       console.log(plates);
-  //     } catch (error) {
-  //       console.error("Error al obtener datos:", error);
-  //     }
-  //   };
+        setPlates(response.data);
+      } catch (error) {
+        console.error("Error al obtener datos:", error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   //example reponse
 
-  useEffect(() => {
-    setPlates(exampleFoodList)
-  }, [])
+  // useEffect(() => {
+  //   setPlates(exampleFoodList)
+  // }, [])
 
   const filteredPlates = plates.filter(plate => {
     return (
