@@ -1,11 +1,24 @@
 .food-item{
   min-width:250px;
   width:20%;
+  transition: all .3s ease;
+
+  &:hover img{
+    transform: scale(1.05);
+  }
+
+  &:hover p{
+    text-decoration: underline;
+    transform: translateY(-40px);
+    font-size: larger;
+    background-color: var(--orange);
+  }
 
   img{
     border-radius: 20px;
     aspect-ratio: 4/3;
     object-fit: cover;
+    transition: all .3s ease;
 
     &.Easy{
       border: 5px solid var(--green);
@@ -21,7 +34,14 @@
   }
 
   p{
+    padding:10px;
     text-align: center;
     font-weight: bold;
+    width: fit-content;
+    margin: 0 auto;
+    z-index: 50;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: all .3s ease;
   }
 }
