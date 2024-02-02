@@ -2,10 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { examplePlate } from '../../Utils/example';
-import './Plate.css'
+import './Recipe.css'
 
-const Plate = () => {
-  const [plate, setPlate] = useState([]);
+const Recipe = () => {
+  const [recipe, setRecipe] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Plate = () => {
           },
         });
 
-        setPlate(response.data);
+        setRecipe(response.data);
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -35,27 +35,27 @@ const Plate = () => {
   // }, [])
 
   return (
-    <div className='plate'>
-      <div className="plate-info">
-        <img src={plate.image} alt={plate.title} />
-        <div className="plate-text">
+    <div className='recipe'>
+      <div className="recipe-info">
+        <img src={recipe.image} alt={recipe.title} />
+        <div className="recipe-text">
 
-          <h1>{plate.title}</h1>
-          <p>{plate.description}</p>
-          <p>{plate.difficulty}</p>
-          <p>{plate.portion}</p>
-          <p>{plate.time}</p>
+          <h1>{recipe.title}</h1>
+          <p>{recipe.description}</p>
+          <p>{recipe.difficulty}</p>
+          <p>{recipe.portion}</p>
+          <p>{recipe.time}</p>
         </div>
       </div>
       <h2>Ingredients</h2>
       <ul>
-        {plate?.ingredients?.map((ingredient, index) => (
+        {recipe?.ingredients?.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
       <h2>Steps</h2>
       <ol>
-        {plate?.method?.map((step, index) => (
+        {recipe?.method?.map((step, index) => (
           <li key={index}>{step[`Step ${index + 1}`]}</li>
         ))}
       </ol>
@@ -63,4 +63,4 @@ const Plate = () => {
   )
 }
 
-export default Plate
+export default Recipe

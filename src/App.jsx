@@ -1,7 +1,7 @@
 import './App.css'
 import Home from './Pages/Home/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Plate from './Pages/Plate/Plate'
+import Recipe from './Pages/Recipe/Recipe'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="*" element={<NotFound />} /> */}
-          <Route path="/:id" element={<Plate />} />
+          <Route path="/:id" element={<Recipe />} />
         </Routes>
         <Footer />
       </BrowserRouter>

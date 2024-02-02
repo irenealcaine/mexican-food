@@ -7,41 +7,42 @@ import Input from '../Input/Input';
 
 const FoodList = () => {
 
-  const [plates, setPlates] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [difficulty, setDifficulty] = useState('');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(import.meta.env.VITE_FOOD_URL, {
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(import.meta.env.VITE_FOOD_URL, {
 
-          headers: {
-            "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
-            "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-          },
-        });
+  //         headers: {
+  //           "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
+  //           "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
+  //         },
+  //       });
 
+  //       setRecipes(response.data);
 
-        setPlates(response.data);
-      } catch (error) {
-        console.error("Error al obtener datos:", error);
-      }
-    };
+  //     } catch (error) {
+  //       console.error("Error al obtener datos:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   //example reponse
 
-  // useEffect(() => {
-  //   setPlates(exampleFoodList)
-  // }, [])
+  useEffect(() => {
+    setRecipes(exampleFoodList)
+  }, [])
 
-  const filteredPlates = plates.filter(plate => {
+  const filteredRecipes = recipes.filter(recipe => {
     return (
-      plate.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (difficulty ? plate.difficulty === difficulty : true)
+      recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+      &&
+      (difficulty ? recipe.difficulty === difficulty : true)
     );
   });
 
@@ -52,12 +53,12 @@ const FoodList = () => {
         onDifficultyChange={setDifficulty}
       />
       <section className='food-list'>
-        {filteredPlates.length !== 0
-          ? filteredPlates.map((plate) => (
+        {filteredRecipes.length !== 0
+          ? filteredRecipes.map((plate) => (
             <FoodItem key={plate.id} plate={plate} />
           ))
 
-          : <p>There's no plates</p>}
+          : <p>There's no recipes</p>}
       </section>
     </>
 

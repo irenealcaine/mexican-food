@@ -8,34 +8,34 @@ const Hero = () => {
 
   const [food, setFood] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(import.meta.env.VITE_FOOD_URL, {
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(import.meta.env.VITE_FOOD_URL, {
 
-          headers: {
-            "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
-            "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-          },
-        });
+  //         headers: {
+  //           "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
+  //           "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
+  //         },
+  //       });
 
-        const randomFood = Math.floor(Math.random() * response.data.length)
-        setFood(response.data[randomFood]);
-      } catch (error) {
-        console.error("Error al obtener datos:", error);
-      }
-    };
+  //       const randomFood = Math.floor(Math.random() * response.data.length)
+  //       setFood(response.data[randomFood]);
+  //     } catch (error) {
+  //       console.error("Error al obtener datos:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
 
   //example reponse
 
-  // useEffect(() => {
-  //   const randomFood = Math.floor(Math.random() * exampleFoodList.length)
-  //   setFood(exampleFoodList[randomFood]);
-  // }, [])
+  useEffect(() => {
+    const randomFood = Math.floor(Math.random() * exampleFoodList.length)
+    setFood(exampleFoodList[randomFood]);
+  }, [])
 
 
 

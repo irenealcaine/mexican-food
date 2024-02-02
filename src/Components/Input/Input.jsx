@@ -6,6 +6,7 @@ const Input = ({ onSearchChange, onDifficultyChange }) => {
     <div className='input-container'>
       <input type="text" name="" id="" placeholder='Search...' onChange={(e) => onSearchChange(e.target.value)} />
       <select onChange={(e) => onDifficultyChange(e.target.value)}>
+        <option value="" hidden>Difficulty</option>
         <option value="">All</option>
         <option value="Easy">Easy</option>
         <option value="Medium">Medium</option>
