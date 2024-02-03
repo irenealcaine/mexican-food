@@ -1,6 +1,6 @@
 .food-item{
-  min-width:250px;
-  width:20%;
+  /* min-width:250px; */
+  width:18%;
   transition: all .3s ease;
 
   &:hover img{
@@ -10,7 +10,6 @@
   &:hover p{
     text-decoration: underline;
     transform: translateY(-40px);
-    font-size: larger;
     background-color: var(--orange);
   }
 

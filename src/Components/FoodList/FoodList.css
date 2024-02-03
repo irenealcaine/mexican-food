@@ -1,13 +1,14 @@
 .food-list{
   display: flex;
   flex-wrap: wrap;
-  gap:30px;
+  column-gap: 2%;
+  row-gap: 30px;
+  justify-content: center;
 
   position: relative;
   z-index:20;
-
-  justify-content: center;
-
   padding-bottom: 70px;
 
+  width: 90%;
+  margin: 0 auto;
 }

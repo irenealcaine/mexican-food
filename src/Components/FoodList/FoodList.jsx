@@ -4,6 +4,7 @@ import axios from 'axios';
 import './FoodList.css'
 import { exampleFoodList } from '../../Utils/example';
 import Input from '../Input/Input';
+import Pagination from '../Pagination/Pagination';
 
 const FoodList = () => {
 
@@ -52,14 +53,19 @@ const FoodList = () => {
         onSearchChange={setSearchTerm}
         onDifficultyChange={setDifficulty}
       />
-      <section className='food-list'>
-        {filteredRecipes.length !== 0
-          ? filteredRecipes.map((plate) => (
-            <FoodItem key={plate.id} plate={plate} />
-          ))
+      {filteredRecipes.length !== 0
+        ?
+        <div>
+          <section className='food-list'>
+            {filteredRecipes.map((plate) => (
+              <FoodItem key={plate.id} plate={plate} />
+            ))}
+          </section>
+          <Pagination />
+        </div>
 
-          : <p>There's no recipes</p>}
-      </section>
+        : <p>There's no recipes</p>
+      }
     </>
 
   )
