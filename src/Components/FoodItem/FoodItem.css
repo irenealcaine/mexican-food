@@ -44,3 +44,15 @@
     transition: all .3s ease;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .food-item{
+    width:30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .food-item{
+    width:90%;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import './Pagination.css'
 
 const Pagination = ({ filteredRecipes, itemsPerPage, currentPage, setCurrentPage }) => {
 
@@ -17,20 +18,25 @@ const Pagination = ({ filteredRecipes, itemsPerPage, currentPage, setCurrentPage
   };
 
   return (
-    <div>{currentPage > 1 &&
-      <button onClick={() => previousPage()}>Previous</button>
-    }
-      {pages.map((page) => (
-        <div
-          className={`pageNumber`}
-          key={page}
-          onClick={() => setCurrentPage(page)}
-        >
-          {page}
-        </div>
-      ))}
+    <div className='pagination'>
+      {currentPage > 1 &&
+        <button className='prev-button' onClick={() => previousPage()}>Previous</button>
+      }
+
+      <div className="pages">
+        {pages.map((page) => (
+          <div
+            className={`page-number ${page === currentPage && "current"}`}
+            key={page}
+            onClick={() => setCurrentPage(page)}
+          >
+            {page}
+          </div>
+        ))}
+      </div>
+
       {currentPage < totalFilteredPages &&
-        <button onClick={() => nextPage()}>Next</button>
+        <button className='next-button' onClick={() => nextPage()}>Next</button>
       }
     </div>
   )

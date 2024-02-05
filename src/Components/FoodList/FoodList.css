@@ -15,3 +15,9 @@
     margin: 0 auto;
   }
 }
+.no-recipes{
+  position: relative;
+    z-index: 500;
+    text-align: center;
+}
+
