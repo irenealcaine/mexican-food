@@ -1,6 +1,7 @@
 .pagination{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap:20px;
   width: fit-content;
   max-width: 90%;
@@ -10,6 +11,8 @@
   .pages{
     display: flex;
     flex-wrap: wrap;
+  justify-content: center;
+
     gap:10px;
 
     .page-number{
