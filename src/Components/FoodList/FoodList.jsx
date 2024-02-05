@@ -11,6 +11,7 @@ const FoodList = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [difficulty, setDifficulty] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -47,6 +48,10 @@ const FoodList = () => {
     );
   });
 
+  const itemsPerPage = 10;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
   return (
     <>
       <Input
@@ -55,13 +60,13 @@ const FoodList = () => {
       />
       {filteredRecipes.length !== 0
         ?
-        <div>
+        <div className='food-list-container'>
           <section className='food-list'>
-            {filteredRecipes.map((plate) => (
+            {filteredRecipes.slice(startIndex, endIndex).map((plate) => (
               <FoodItem key={plate.id} plate={plate} />
             ))}
           </section>
-          <Pagination />
+          <Pagination filteredRecipes={filteredRecipes} itemsPerPage={itemsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </div>
 
         : <p>There's no recipes</p>
