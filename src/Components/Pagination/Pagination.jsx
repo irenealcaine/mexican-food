@@ -1,13 +1,13 @@
 import React from 'react'
 import './Pagination.css'
 
-const Pagination = ({ filteredRecipes, itemsPerPage, currentPage, setCurrentPage }) => {
-
-  const totalFilteredPages = Math.ceil(filteredRecipes.length / itemsPerPage);
+const Pagination = ({ totalItems, itemsPerPage, currentPage, setCurrentPage }) => {
+  const totalFilteredPages = Math.ceil(totalItems / itemsPerPage);
   const pages = [];
-  for (var i = 1; i <= totalFilteredPages; i++) {
+  for (let i = 1; i <= totalFilteredPages; i++) {
     pages.push(i);
   }
+
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);

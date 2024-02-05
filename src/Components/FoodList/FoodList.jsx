@@ -66,7 +66,13 @@ const FoodList = () => {
               <FoodItem key={plate.id} plate={plate} />
             ))}
           </section>
-          <Pagination filteredRecipes={filteredRecipes} itemsPerPage={itemsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+
+          <Pagination
+            totalItems={filteredRecipes.length}
+            itemsPerPage={itemsPerPage}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
 
         :
