@@ -69,7 +69,8 @@ const FoodList = () => {
           <Pagination filteredRecipes={filteredRecipes} itemsPerPage={itemsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </div>
 
-        : <p className='no-recipes'>There's no recipes</p>
+        :
+        <p className='no-recipes'>There's no recipes</p>
       }
     </>
 

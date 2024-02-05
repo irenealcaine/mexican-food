@@ -8,31 +8,31 @@ const Recipe = () => {
   const [recipe, setRecipe] = useState([]);
   const { id } = useParams();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://the-mexican-food-db.p.rapidapi.com/${id}`, {
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(`https://the-mexican-food-db.p.rapidapi.com/${id}`, {
 
-          headers: {
-            "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
-            "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-          },
-        });
+  //         headers: {
+  //           "X-RapidAPI-Host": import.meta.env.VITE_FOOD_HOST,
+  //           "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
+  //         },
+  //       });
 
-        setRecipe(response.data);
-      } catch (error) {
-        console.error("Error al obtener datos:", error);
-      }
-    };
+  //       setRecipe(response.data);
+  //     } catch (error) {
+  //       console.error("Error al obtener datos:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   //example response
 
-  // useEffect(() => {
-  //   setPlate(examplePlate)
-  // }, [])
+  useEffect(() => {
+    setRecipe(examplePlate)
+  }, [])
 
   return (
     <div className='recipe'>
