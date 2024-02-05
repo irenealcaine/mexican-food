@@ -61,9 +61,13 @@ const FoodList = () => {
       {filteredRecipes.length !== 0
         ?
         <div className='food-list-container'>
+
           <section className='food-list'>
             {filteredRecipes.slice(startIndex, endIndex).map((plate) => (
-              <FoodItem key={plate.id} plate={plate} />
+              <FoodItem
+                key={plate.id}
+                plate={plate}
+              />
             ))}
           </section>
 
